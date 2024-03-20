@@ -1,0 +1,26 @@
+<!doctype html>
+
+<!-- In this html page i want to bring base.html. For that i am going to replace it with base but instead of writing html i am going to pass layout and in my layout i am going to pass my below section i.e., its reference which will go in my base.html layout(content) and then into the div and then as a whole it will come to home -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>This is home page</title>
+</head>
+<body>
+
+<!-- To bring the text in center use d-flex-->
+
+	<section class="banner d-flex justify-content-center align-items-center">
+	<div class="text-center">
+		<h1 class="font-weight-bold">Smart Contact Manager</h1>
+		<p>
+			Start Collecting your contacts in very smarter way. We provide
+			very efficient and smarter way of handling contacts.
+		</p>
+		<!-- To create a button -->
+		<button class="btn hello btn-lg text-white">Get Start</button>
+	</div>
+	</section>
+</body>
+</html>

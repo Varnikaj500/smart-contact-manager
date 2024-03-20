@@ -1,0 +1,17 @@
+<!doctype html>
+
+<!-- In this html page i want to bring base.html. For that i am going to replace it with base but instead of writing html i am going to pass layout and in my layout i am going to pass my below section i.e., its reference which will go in my base.html layout(content) and then into the div and then as a whole it will come to home -->
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+th:replace="base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>This is home page</title>
+</head>
+<body>
+	<section>
+	<h1>This is about page</h1>
+	<h2>We are going to write about smart contact manager</h2>
+	</section>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+
+<!-- In this html page i want to bring base.html. For that i am going to replace it with base but instead of writing html i am going to pass layout and in my layout i am going to pass my below section i.e., its reference which will go in my base.html layout(content) and then into the div and then as a whole it will come to home -->
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>This is home page</title>
+</head>
+<body>
+	<section>
+	<div id="login">
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                    <!-- to submit my form in do-login in action I am going to write do-login -->
+                        <form id="login-form" class="form" th:action="@{/dologin}" action="#" method="post">
+                            
+                            <h3 class="text-center text-info">Login</h3>
+                            
+                            <!-- For error -->
+                            <div th:if="${param.error}" class="alert alert-danger">
+                            Invalid username and password
+                            </div>
+                            
+                            <div th:if="${param.logout}" class="alert alert-success">
+                           		 You have been logged out
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="username" class="text-info">Username:</label><br>
+                                <input type="text" name="username" id="username" class="form-control">
+                            </div>
+                           
+                            <div class="form-group">
+                                <label for="password" class="text-info">Password:</label><br>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </div>
+                           
+                            <div class="form-group">
+                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                            </div>
+                            
+                            <!-- On login page only when seeing option of register then signup page should appear . For that provide the link of signup  -->
+                            
+                            <div id="register-link" class="text-right">
+                                <a href="/sign-up/" class="text-info">Register here</a>
+                            </div>
+                      
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	</section>
+</body>
+</html>
